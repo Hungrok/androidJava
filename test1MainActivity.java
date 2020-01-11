@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Linking ViewPager - PagerAdapter
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        PagerAdapter adapter = new MyPagerAdapter(this);
+        PagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         // Button object , callback listener
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ls1 = new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(0);
             }
         };
         bt1.setOnClickListener(ls1);  // 핸들러에게 콜백객체 set
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ls3 = new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(2);
             }
         };
         bt1.setOnClickListener(ls3);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ls4 = new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(3);
             }
         };
         bt1.setOnClickListener(ls1);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ls5 = new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(4);
             }
         };
         bt1.setOnClickListener(ls1);
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ls6 = new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(5);
             }
         };
         bt1.setOnClickListener(ls1);

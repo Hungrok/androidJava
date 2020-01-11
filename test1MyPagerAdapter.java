@@ -4,13 +4,16 @@ package com.example.test1;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class MyPagerAdapter extends PagerAdapter {
+public class MyPagerAdapter extends FragmentPagerAdapter {
 
 
     Context context;
@@ -23,32 +26,47 @@ public class MyPagerAdapter extends PagerAdapter {
             R.drawable.ic_battery_90_black_24dp
     };
 
-    MyPagerAdapter(Context context) {
-        this.context = context;
+
+
+    public MyPagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        switch (position){
+            case 0:
+                return BlankFragment.newInstance("Fragment-0","Test", 0);
+            case 1:
+                return BlankFragment.newInstance("Fragment-1","Test", 1);
+            case 2:
+                return BlankFragment.newInstance("Fragment-2","Test", 2);
+            case 3:
+                return BlankFragment.newInstance("Fragment-3","Test", 3);
+            case 4:
+                return BlankFragment.newInstance("Fragment-4","Test", 4);
+            case 5:
+                return BlankFragment.newInstance("Fragment-5","Test", 5);
+
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return drawableImgs.length;
+        return 6;
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
-
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        ImageView imageView = new ImageView(context);
-        Bitmap drawImg = BitmapFactory.decodeResource(context.getResources(), drawableImgs[position]);
-
-        imageView.setImageBitmap(drawImg);
-        container.addView(imageView, 0);
-        return imageView;
-    }
-
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((ImageView) object);
+    public CharSequence getPageTitle(int position) {
+        switch (position){
+            case 0:
+                return "SUB01";
+            case 1:
+                return "SUB02";
+            default:
+                return null;
+        }
     }
 }
