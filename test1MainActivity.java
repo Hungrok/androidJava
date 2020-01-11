@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Linking ViewPager - PagerAdapter
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         PagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+
 
         // Button object , callback listener
         Button bt1 = findViewById(R.id.button1);
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(1);
             }
         };
-        bt1.setOnClickListener(ls2);
+        bt2.setOnClickListener(ls2);
 
         View.OnClickListener ls3 = new View.OnClickListener(){
             @Override
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(2);
             }
         };
-        bt1.setOnClickListener(ls3);
+        bt3.setOnClickListener(ls3);
 
         View.OnClickListener ls4 = new View.OnClickListener(){
             @Override
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(3);
             }
         };
-        bt1.setOnClickListener(ls1);
+        bt4.setOnClickListener(ls4);
 
         View.OnClickListener ls5 = new View.OnClickListener(){
             @Override
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(4);
             }
         };
-        bt1.setOnClickListener(ls1);
+        bt5.setOnClickListener(ls5);
 
         View.OnClickListener ls6 = new View.OnClickListener(){
             @Override
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(5);
             }
         };
-        bt1.setOnClickListener(ls1);
+        bt6.setOnClickListener(ls6);
 
 
 

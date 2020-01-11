@@ -4,6 +4,7 @@ package com.example.test1;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -25,8 +26,6 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
             R.drawable.ic_battery_80_black_24dp,
             R.drawable.ic_battery_90_black_24dp
     };
-
-
 
     public MyPagerAdapter(FragmentManager fm) {
         super(fm);

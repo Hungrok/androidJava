@@ -61,7 +61,7 @@ public class BlankFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
+            mPage = getArguments().getInt("PAGENUMBER");
 
         }
     }
@@ -72,6 +72,28 @@ public class BlankFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = null;
         view = inflater.inflate(R.layout.fragment_blank, container, false);
+        ImageView image = (ImageView) view.findViewById(R.id.imageView);
+        switch(mPage) {
+            case 0:
+                image.setImageResource(R.drawable.ic_battery_20_black_24dp);
+                break ;
+            case 1:
+                image.setImageResource(R.drawable.ic_battery_30_black_24dp);
+                break ;
+            case 2:
+                image.setImageResource(R.drawable.ic_battery_50_black_24dp);
+                break ;
+            case 3:
+                image.setImageResource(R.drawable.ic_battery_60_black_24dp);
+                break ;
+            case 4:
+                image.setImageResource(R.drawable.ic_battery_80_black_24dp);
+                break ;
+            case 5:
+                image.setImageResource(R.drawable.ic_battery_90_black_24dp);
+                break ;
+        }
+
         TextView text = (TextView) view.findViewById(R.id.textView);
         text.setText(mParam1);
 
@@ -81,19 +103,21 @@ public class BlankFragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            //mListener.onFragmentInteraction(uri);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        */
     }
 
     @Override
